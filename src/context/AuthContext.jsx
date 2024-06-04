@@ -1,5 +1,5 @@
-import { createContext, useContext, useEffect, useState } from 'react'
-import { GoogleAuthProvider, signInWithRedirect, signOut, onAuthStateChanged } from 'firebase/auth/web-extension'
+import { createContext, useEffect, useState } from 'react'
+import { GoogleAuthProvider, signInWithRedirect, signOut, onAuthStateChanged } from 'firebase/auth'
 import { auth } from '../api/firebase.config'
 
 export const AuthContext = createContext()
@@ -37,8 +37,4 @@ export const AuthProvider = ({ children }) => {
     }
     </AuthContext.Provider>
   )
-}
-
-export const UserAuth = () => {
-  return useContext(AuthContext)
 }

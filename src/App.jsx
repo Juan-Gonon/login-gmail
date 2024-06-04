@@ -1,11 +1,14 @@
 import styled from 'styled-components'
+import { AuthProvider } from './context/AuthContext'
 import './App.css'
 
 function App () {
   return (
-    <Container>
-      <h1>LOGIN GMAIL</h1>
-    </Container>
+    <AuthProvider>
+      <Container>
+        <h1>Gmail</h1>
+      </Container>
+    </AuthProvider>
   )
 }
 
