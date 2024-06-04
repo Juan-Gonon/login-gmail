@@ -1,8 +1,19 @@
 import styled from 'styled-components'
 import astronauta from '../assets/astronauta.png'
 import logogoogle from '../assets/logoogle.png'
+import { useAuth } from '../hook/useAuth'
 
 export const Login = () => {
+  const { googleSingIn } = useAuth()
+
+  const iniciarScion = async () => {
+    try {
+      await googleSingIn()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <Container>
       <section className='imgseccion'>
@@ -15,7 +26,7 @@ export const Login = () => {
       <section className='panelsesion'>
         <h2>Iniciar sesión</h2>
 
-        <button className='btniniciar'>
+        <button onClick={iniciarScion} className='btniniciar'>
           <img src={logogoogle} />
           <span> Iniciar con Gmail</span>
         </button>
