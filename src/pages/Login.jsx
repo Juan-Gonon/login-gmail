@@ -17,8 +17,6 @@ export const Login = () => {
     }
   }
 
-  console.log(user)
-
   useEffect(() => {
     if (user !== null) {
       navigate('/')
