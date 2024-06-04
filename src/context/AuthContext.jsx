@@ -19,6 +19,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unSubCribe = onAuthStateChanged(auth, (currentUser) => {
+      console.log(currentUser)
       setUser(currentUser)
     })
 
