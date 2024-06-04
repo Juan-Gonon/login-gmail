@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 import { AuthProvider } from './context/AuthContext'
+import { MyRoutes } from './routers/routes'
 import './App.css'
 
 function App () {
   return (
     <AuthProvider>
       <Container>
-        <h1>Gmail</h1>
+        <MyRoutes />
       </Container>
     </AuthProvider>
   )
