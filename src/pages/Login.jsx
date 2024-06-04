@@ -2,9 +2,12 @@ import styled from 'styled-components'
 import astronauta from '../assets/astronauta.png'
 import logogoogle from '../assets/logoogle.png'
 import { useAuth } from '../hook/useAuth'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export const Login = () => {
-  const { googleSingIn } = useAuth()
+  const { googleSingIn, user } = useAuth()
+  const navigate = useNavigate()
 
   const iniciarScion = async () => {
     try {
@@ -13,6 +16,14 @@ export const Login = () => {
       console.log(error)
     }
   }
+
+  console.log(user)
+
+  useEffect(() => {
+    if (user !== null) {
+      navigate('/')
+    }
+  }, [navigate, user])
 
   return (
     <Container>
