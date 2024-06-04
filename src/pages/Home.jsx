@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { useAuth } from '../hook/useAuth'
-import { useEffect } from 'react'
 
 export const Home = () => {
   const { user, logOut } = useAuth()
